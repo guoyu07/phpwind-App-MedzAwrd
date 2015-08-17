@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+	<template source='TPL:admin.common.head' />
+</head>
+<body>
+<div class="wrap">
+	<form method="post" class="J_ajaxForm" action="{@url:app/MedzAward/manage/setting}">
+		<div class="table_full">
+			<table width="100%">
+				<col class="th" >
+				<col>
+				<col>
+				<!-- 设置权限用户组 Start -->
+				<tr>
+					<th>发布帖子拥有打赏功能的用户组:</th>
+					<td>
+						<div class="user_group J_check_wrap J_usergroup_items" >
+							<?php foreach ($groups as $gk => $gs) { ?>
+							<dl>
+								<dt>
+									<label>
+										<input class="J_check_all" data-direction="y" data-checklist="J_check_{$gk}" type="checkbox" >{$gs['name']}
+									</label>
+								</dt>
+								<dd>
+								<?php foreach ($gs['child'] as $gid => $gname) { ?>
+									<label>
+										<input class="J_check" data-yid="J_check_{$gk}" type="checkbox" name="groups[]" value="{$gid}" {@Pw::ifcheck(in_array($gid, $gids))}>
+										<span>{$gname}</span>
+									</label>
+								<?php } ?>
+								</dd>
+							</dl>
+							<?php } ?>
+						</div>
+					</td>
+					<td>
+						<div class="fun_tips">设置发布帖子后，帖子拥有打赏功能的用户组。</div>
+					</td>
+				</tr>
+				<!-- 设置默认打赏积分类型 -->
+				<tr>
+					<th>打赏的积分类型：</th>
+					<td>
+						<?php foreach ($credits as $cid => $cname) { ?>
+						<label>
+							<input type="radio" name="credit" value="{$cid}" {@Pw::ifcheck($cid == $cid2)}>
+							<span>{$cname}</span>
+						</label>
+						<?php } ?>
+					</td>
+					<td>
+						<div class="fun_tips">设置打赏的积分类型</div>
+					</td>
+				</tr>
+				<!-- 设置默认打赏的积分 -->
+				<tr>
+					<th>默认打赏积分数量：</th>
+					<td>
+						<input class="input length_5" type="number" min="0" seep="1" name="default" value="{$default}">
+					</td>
+					<td>
+						<div class="fun_tips">设置默认打赏的积分数量，必须为整数，如果有小数点，自动舍弃。默认打赏数量。不得低于最低打赏数量，否则按照最低打赏数量算，不得高于最多打赏数量，否则按照最多打赏数量算。</div>
+					</td>
+				</tr>
+				<!-- 设置最低打赏数量 -->
+				<tr>
+					<th>设置用户最低打赏数量：</th>
+					<td>
+						<input class="input length_5" type="number" min="0" seep="1" name="min" value="{$min}">
+					</td>
+					<td>
+						<div class="fun_tips">设置用户最低打赏的数量，留空或者为0则表示不限制。</div>
+					</td>
+				</tr>
+				<tr>
+					<th>设置用户最多打赏的数量：</th>
+					<td>
+						<input class="input length_5" type="number" min="0" seep="1" name="max" value="{$max}">
+					</td>
+					<td>
+						<div class="fun_tips">设置用户最多打赏的数量，超出此数，将提示用户。如果用户积分不足，也会提示用户！留空或者设置为0标识不受限制。</div>
+					</td>
+				</tr>
+			</table>
+		</div>
+		<div class="btn_wrap">
+			<div class="btn_wrap_pd">
+				<button class="btn btn_submit mr10 J_ajax_submit_btn" type="submit">提交</button>
+			</div>
+		</div>
+	</form>
+</div>
+<template source='TPL:admin.common.footer' />
+</body>
+</html>

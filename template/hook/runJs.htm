@@ -1,0 +1,9 @@
+<hook-action name="runJs", args="default, min, max, userMax, credit">
+<script type="text/javascript">
+Wind.css(GV.JS_EXTRES + '/MedzAward/css/medz.cn.css');
+Wind.use('jquery', 'dialog', GV.JS_EXTRES + '/MedzAward/javascript/medz.cn.js', function() {
+	var medz = new MedzAward({@intval($min)}, {@intval($max)}, {@intval($default)}, {@intval($userMax)}, '{$credit['name']|text}', '{$credit['unit']}');
+	medz.cn();
+});
+</script>
+</hook-action>

@@ -1,0 +1,22 @@
+<hook-action name="createHtmlContentBottom" args="tid, uids, number">
+<div class="MedzAward cc">
+	<p class="tip">如果看的爽了，也可以打赏哦。</p>
+	<p class="award">
+		<a class="MedzBut" href="{@url:app/MedzAward/award/send?_json=1}" title="觉得不错，打赏！" data-tid="{$tid|text}" id="MedzAward">打赏</a>
+	</p>
+	<fieldset>
+		<legend>{$number|text}人打赏</legend>
+	</fieldset>
+	<ul class="MedzAwardUsers cc">
+		<?php if(!empty($uids) and is_array($uids)) { ?>
+		<?php foreach ($uids as $uid) { ?>
+		<li>
+			<a class="J_user_card_show" href="{@url:space/index/run?uid=$uid}" target="_blank" data-uid="{$uid}" title="访问个人主页">
+				<img src="{@Pw::getAvatar($uid, 'small')}" alt="头像">
+			</a>
+		</li>
+		<?php } ?>
+		<?php } ?>
+	</ul>
+</div>
+</hook-action>

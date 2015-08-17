@@ -1,0 +1,80 @@
+/*=============*/
+/**
+ * 打赏CSS
+ * @about: Medz Seven <lovevipdsw@vip.qq.com>
+ * website: medz.cn
+**/
+.MedzAward {
+	width: 100%;
+	text-align: center;
+	height: auto;
+}
+
+.MedzAward p.tip {
+	font-size: 14px;
+	color: #808080;
+	text-decoration: none;
+	margin-top: 5px;
+	margin-bottom: 15px;
+}
+
+.MedzAward .award {
+	margin-bottom: 5px;
+}
+
+.MedzAward .MedzBut {
+	display: inline-block;
+	background: url("../images/btn.png") no-repeat;
+	overflow: hidden;
+	text-indent: -999px;
+	width: 62px;
+	height: 62px;
+	background-position: 0 -100px;
+}
+
+.MedzAward .MedzBut:hover {
+	background-position: 0 -170px;
+}
+
+.MedzAward fieldset {
+	border: 0;
+	display: block;
+	border-style: solid;
+	border-width: 1px 0 0 0;
+	border-color: #d9d9d9;
+	width: 30%;
+	margin: 10px 0 7px;
+	padding: 0 35%;
+}
+
+.MedzAward fieldset legend {
+	margin: 0;
+	padding: 0;
+	width: 100%;
+	color: #808080;
+    text-decoration: none;
+    text-align: center;
+    font-weight: normal;
+}
+
+.MedzAward .MedzAwardUsers {
+	width: 100%;
+	text-align: center;
+	margin: 0 0 0 1px;
+}
+
+.MedzAward .MedzAwardUsers li, .MedzAward .MedzAwardUsers img {
+	width: 50px;
+	height: 50px;
+}
+
+.MedzAward .MedzAwardUsers li {
+    padding: 0;
+    display: inline;
+    float: none;
+    margin: 0;
+}
+
+.MedzAward .MedzAwardUsers img {
+	padding: 0 0 0 4px;
+}

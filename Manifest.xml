@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest>
+	<application>
+		<name>打赏</name>
+		<alias>MedzAward</alias>
+		<version>1.3</version>
+		<pw-version>9.0.1</pw-version>
+		<description>发优质帖，赚高积分！用户发布帖子，可以获得阅读者打赏哦。</description>
+		<logo>images/logo.jpg</logo>
+		<type>app</type>
+		<charset>UTF-8</charset>
+		<website>//medz.cn</website>
+		<author-name>Medz Seven</author-name>
+		<author-email>lovevipdsw@vip.qq.com</author-email>
+		<author-icon>//medz.cn/windid/attachment/avatar/000/00/00/1.jpg</author-icon>
+	</application>
+	<res>res</res>
+	<installation-service></installation-service>
+	<inject-services>
+		<s_admin_menu>
+			<app_MedzAward>
+				<class>EXT:MedzAward.service.srv.AppMedzAwardConfigDo</class>
+				<loadway>load</loadway>
+				<method>getAdminMenu</method>
+				<description>打赏admin menu</description>
+			</app_MedzAward>
+		</s_admin_menu>
+		<m_PwThreadDisplay>
+			<app_MedzAward>
+				<class>EXT:MedzAward.service.srv.AppMedzAwardPwThreadDisplayDo</class>
+				<description>this is another m_PwThreadDisplay</description>
+			</app_MedzAward>
+		</m_PwThreadDisplay>
+		<s_PwCreditOperationConfig>
+			<app_MedzAward>
+				<class>EXT:MedzAward.service.srv.AppMedzAwardConfigDo</class>
+				<loadway>load</loadway>
+				<method>getPwCreditOperation</method>
+				<description>积分记录设置</description>
+			</app_MedzAward>
+		</s_PwCreditOperationConfig>
+	</inject-services>
+</manifest>
